@@ -1,0 +1,232 @@
+*{
+  /* border:2px green dashed; */
+  margin:0px;
+  padding:0px; 
+}
+
+body{
+    background-color: #353535;
+    font-family: 'Roboto Slab', serif;
+    min-width:100%;
+}
+
+/* what contains everything on the page */
+.container{
+  /* margin-right:3em; */
+  min-width:100%;
+  /* width:100%; */
+  height:100vh;
+  display:grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+        "icon"
+        "nav"
+        "content"
+        "footer";
+}
+
+/* step one: name your sections */
+/* the sections of my about me page */
+.icon,
+ nav,
+ .content,
+ footer{
+   padding-left: 3em;
+   padding-right: 3em;
+   text-align: center;
+}
+
+.icon svg {
+  width:40%;
+  padding-top:30px;
+  padding-bottom:30px;
+  padding-left:20px;
+}
+
+/* navigation bar styling */
+
+nav{
+  margin-left:2em;
+  grid-area:nav;
+  justify-content: center;
+  text-align:center;
+  padding-left:4em;
+  padding-right: 4em;
+  /* background-color: #353535; */
+  /* background-color: red; */
+  
+}
+
+nav ul {
+  margin:0;
+  padding:0;
+  display:flex;
+  justify-content: space-between;
+  text-align: center;
+  position: relative;
+  color: #353535;
+  background-image:url(assets/3-new-header.svg);
+  background-repeat:no-repeat;
+  
+}
+nav li{
+  padding: 1em 0;
+  list-style-type: none;
+  padding: 25px;
+  font-size: 1.1em;
+  position: relative;
+}
+
+.effect-3 a:before,
+.effect-3 a:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  opacity: 0;
+  background-color: red;
+  /* background-color: #353535; */
+  position: absolute;
+  transition: all .5s;
+}
+
+ .effect-3 a:before {
+  top: 20px;
+  left: 27px;
+  
+}
+
+.effect-3 a:after {
+  bottom: 20px;
+  right: 25px;
+}
+
+.effect-3 a:hover:before,
+.effect-3 a:hover:after {
+  width: calc(47% + 25px);
+  opacity: 10;
+} 
+
+nav li a {
+  color: white;
+  font-weight: 400;
+  text-decoration: none;
+  /* transition: .3s; */
+} 
+
+/* nav li a:hover {
+  color:red;
+  opacity: 1;
+  text-decoration: none;
+} */
+
+
+a:link {
+    text-decoration: none;
+  }
+  
+a:visited {
+    text-decoration: none;
+  }
+
+/* content section */
+.content{
+  grid-area:content;
+  max-width:600px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 50px;
+  
+  }
+
+.content img{
+  width: 60%;
+  border-radius: 20%;
+  margin-bottom: 4em;
+}
+
+.content p{
+  text-align: left;
+  font-size:1em;
+  line-height: 1.5rem;
+  color: white;
+  font-weight: 300;
+  background-color: red;
+  padding: 15px;
+}
+/* .paragraph2{
+  text-indent: 2em;
+} */
+/* the span tag that wrap starts off my paragraph */
+/* .bigText {
+  font-size:2em;
+  padding-right:.5em;
+} */
+footer{
+  grid-area:footer;
+}
+footer p{
+  font-size:2em;
+  color: white;
+}
+
+footer li {
+  display:inline;
+}
+
+footer ul {
+  max-width: 640px;
+  margin: 2em auto;
+  padding:0;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+
+}
+footer ul li{
+  list-style: none;
+  align-self:flex-end;
+}
+footer ul li a {
+  text-decoration:none;
+  color: white;
+  /* opacity:.6; */
+  transition: .3s;
+}
+footer ul li a:hover {
+  text-decoration:none;
+  color:red;
+}
+
+footer svg {
+  width:20%;
+}
+
+footer p{
+  font-size: 1em;
+}
+/* grid system for desktop */
+@media (min-width:1040px){
+  .container{
+    width:100%;
+    height:100vh;
+    display:grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+          "icon content"
+          "nav content"
+          "nav content"
+          "footer footer";
+  }
+    nav ul{
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      position: relative;
+      background-image: url(assets/desktop-navbar.svg)
+    }
+    .icon svg {
+      width: 100%;
+      padding-left:20px;
+    }
